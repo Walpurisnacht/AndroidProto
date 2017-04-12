@@ -6,35 +6,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
+public class SwitchActivity extends AppCompatActivity
     implements TestFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+        setContentView(R.layout.activity_switch);
 
-    public void onSwitchClick(View view) {
-        Intent intent = new Intent(this, SwitchActivity.class);
+        Intent intent = getIntent();
+
         TestFragment testFragment = (TestFragment) getSupportFragmentManager
                 ().findFragmentById(R.id.fragment);
         TextView textView = (TextView) testFragment.getView().findViewById(R.id
                 .textView);
-        intent.putExtra("TEXT_VIEW_DATA", textView.getText());
-        startActivity(intent);
+        textView.setText(intent.getStringExtra("TEXT_VIEW_DATA"));
     }
 
     @Override
     public void syncValue(View view) {
+        TextView textView = (TextView) findViewById(R.id.mainView);
 
-        TestFragment testFragment = (TestFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.fragment);
 
-        TextView mainView = (TextView) findViewById(R.id.mainView);
-
-        TextView textView = (TextView) testFragment.getView().findViewById(R.id
-                .textView);
-        mainView.setText(textView.getText());
+        textView.setText("Different behavior");
     }
 }

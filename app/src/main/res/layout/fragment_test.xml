@@ -1,0 +1,30 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.example.walpurisnacht.androidproto.TestFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/textView" android:layout_gravity="left|top"
+            android:textSize="30dp"
+            android:gravity="center_vertical" android:textAlignment="center"
+            android:text="0"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/increment"
+            android:id="@+id/btnIncrement"
+            android:layout_gravity="left|bottom"
+            android:onClick="onBtnIncrementClick"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            android:id="@+id/btnSend" android:layout_gravity="right|bottom"
+            android:onClick="onBtnSendClick"/>
+</FrameLayout>
